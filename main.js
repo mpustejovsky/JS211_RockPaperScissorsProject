@@ -13,9 +13,51 @@ const rl = readline.createInterface({
 
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
+ 
+   if (hand1 == hand2) { 
+      console.log ("It's a tie!");
+      return "It's a tie!";          
+    }
 
-  // Write code here
-  // Use the unit test to see what is expected
+    //checks winner if player selects rock
+
+    else if (hand1 == 'rock'){
+            
+            if (hand2 == 'paper'){ 
+              console.log ("Hand one wins!");
+              return "Hand one wins!";            
+            }
+
+            else { 
+              console.log ("Hand two wins!");
+              return "Hand two wins!"; 
+          } 
+    }
+
+    //checks winner if player selects paper
+
+    else if (hand1 == 'paper'){
+      if (hand2 == 'siccors'){ 
+        console.log ("Hand two wins!");
+              return "Hand two wins!"; 
+      }
+
+      else {console.log ("Hand one wins!");
+      return "Hand one wins!"; 
+    } 
+    }
+
+   //only option left is player selecting siccors.  Determine winner here
+    else if (hand1 == 'siccors'){
+      if (hand2 == 'rock'){ 
+        console.log ("Hand two wins!");
+              return "Hand two wins!"; 
+      }
+
+      else { console.log ("Hand one wins!");
+      return "Hand one wins!"; 
+    } 
+    }
 
 }
 
@@ -24,8 +66,14 @@ const rockPaperScissors = (hand1, hand2) => {
 // to close it ctrl + C
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
+    answer1=answer1.toLowerCase();
+    answer1=answer1.trim();
     rl.question('hand2: ', (answer2) => {
-      console.log( rockPaperScissors(answer1, answer2) );
+      answer2=answer2.toLowerCase();
+      answer2=answer2.trim();
+      if ((answer1 == "rock" || answer1 == "paper" || answer1 == "siccors") && (answer2 == "rock" || answer2 == "paper" || answer2 == "siccors")){
+      console.log( rockPaperScissors(answer1, answer2) );}
+      else console.log ("Both names not vailid Try again")
       getPrompt();
     });
   });
