@@ -17,11 +17,14 @@ const rockPaperScissors = (hand1, hand2) => {
   let answer2=hand2;
   answer1=answer1.toLowerCase();
   answer1=answer1.trim();
+  answer2=answer2.toLowerCase();
+  answer2=answer2.trim();
+ 
 
-  if (answer1 != "rock" && answer1 !="paper" && answer1 !="siccors")
+  if (answer1 != "rock" && answer1 !="paper" && answer1 !="scissors")
     {return "Not Valid Input"}
 
-if (answer2 != "rock" && answer2 !="paper" && answer2 !="siccors")
+if (answer2 != "rock" && answer2 !="paper" && answer2 !="scissors")
     {return "Not Valid Input"}
 
    if (answer1 == answer2) { 
@@ -47,7 +50,7 @@ if (answer2 != "rock" && answer2 !="paper" && answer2 !="siccors")
     //checks winner if player selects paper
 
     else if (answer1 == 'paper'){
-      if (answer2 == 'siccors'){ 
+      if (answer2 == 'scissors'){ 
         console.log ("Hand two wins!");
               return "Hand two wins!"; 
       }
@@ -57,8 +60,8 @@ if (answer2 != "rock" && answer2 !="paper" && answer2 !="siccors")
     } 
     }
 
-   //only option left is player selecting siccors.  Determine winner here
-    else if (answer1 == 'siccors'){
+   //only option left is player selecting scissors.  Determine winner here
+    else if (answer1 == 'scissors'){
       if (answer2 == 'rock'){ 
         console.log ("Hand two wins!");
               return "Hand two wins!"; 
