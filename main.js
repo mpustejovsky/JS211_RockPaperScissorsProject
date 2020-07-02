@@ -22,10 +22,12 @@ const rockPaperScissors = (hand1, hand2) => {
  
 
   if (answer1 != "rock" && answer1 !="paper" && answer1 !="scissors")
-    {return "Not Valid Input"}
+    { console.log ("Not Valid Input")
+      return "Not Valid Input"}
 
 if (answer2 != "rock" && answer2 !="paper" && answer2 !="scissors")
-    {return "Not Valid Input"}
+    {console.log ("Not Valid Input")
+      return "Not Valid Input"}
 
    if (answer1 == answer2) { 
       console.log ("It's a tie!");
@@ -111,6 +113,14 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
+    it('should detect invalid input', () => {
+      assert.equal(rockPaperScissors('rock', 'dog '), "Not Valid Input");
+      assert.equal(rockPaperScissors('pickle', 'paper'), "Not Valid Input");
+      assert.equal(rockPaperScissors('Jesus', 'Devil'), "Not Valid Input");
+      assert.equal(rockPaperScissors('', 'scissors'), "Not Valid Input");
+    });
+
+    
   });
 } else {
 
